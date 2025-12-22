@@ -1,4 +1,4 @@
-import { test as setup, expect } from "../fixtures/fixtures.js";
+import { test as setup, expect } from "../fixtures/login.js";
 import { Login } from "../test-data/test-data.json";
 
 setup("User login", async ({ loginTest, page }) => {
