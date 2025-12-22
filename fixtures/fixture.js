@@ -1,6 +1,6 @@
 import { test as base } from "@playwright/test";
-import LoginPage from "../pages/loginpage.js";
-import CustomerPage from "../pages/sales/customer.js";
+import LoginPage from "../pages/loginpage";
+import CustomerPage from "../pages/customer";
 
 export const test = base.extend({
   loginTest: async ({ page }, use) => {
