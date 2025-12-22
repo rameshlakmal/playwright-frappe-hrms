@@ -1,11 +1,7 @@
-import { test as base } from "@playwright/test";
 import LoginPage from "../pages/loginpage.js";
 
-export const test = base.extend({
+export const loginFixtures = {
   loginTest: async ({ page }, use) => {
-    const loginTest = new LoginPage(page);
-    await use(loginTest);
+    await use(new LoginPage(page));
   },
-});
-
-export const expect = base.expect;
+};

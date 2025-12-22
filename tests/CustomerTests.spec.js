@@ -1,4 +1,5 @@
-import { test, expect } from "../fixtures/sales.js";
+import { test, expect } from "../fixtures/base.fixture.js";
+
 import { faker } from "@faker-js/faker";
 
 test.describe.serial("Customer Test Cases", () => {

@@ -1,11 +1,7 @@
-import { test as base } from "@playwright/test";
 import CustomerPage from "../pages/sales/customer.js";
 
-export const test = base.extend({
+export const salesFixtures = {
   customerTest: async ({ page }, use) => {
-    const customerTest = new CustomerPage(page);
-    await use(customerTest);
+    await use(new CustomerPage(page));
   },
-});
-
-export const expect = base.expect;
+};
