@@ -1,6 +1,6 @@
 export default class LoginPage {
   constructor(page) {
-    this.page = page; // Use Playwright's page object directly
+    this.page = page;
   }
 
   async login(username, password) {
