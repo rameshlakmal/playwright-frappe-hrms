@@ -1,4 +1,4 @@
-import { test, expect } from "../fixtures/base.fixture.js";
+import { test, expect } from "../fixtures/fixture.js";
 
 import { faker } from "@faker-js/faker";
 
