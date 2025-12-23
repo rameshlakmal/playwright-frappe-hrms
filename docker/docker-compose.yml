@@ -20,16 +20,12 @@ services:
     command: bash /workspace/init.sh
     environment:
       - SHELL=/bin/bash
-    working_dir: /workspace
+    working_dir: /home/frappe
     volumes:
-      - ./frappe-hrms:/workspace
+      - .:/workspace
     ports:
       - 8000:8000
       - 9000:9000
-
-    depends_on:
-      - mariadb
-      - redis
 
 volumes:
   mariadb-data:

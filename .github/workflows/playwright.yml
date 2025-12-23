@@ -19,9 +19,26 @@ jobs:
       - run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+
+      # --- New steps to start Frappe HRM ---
+      - name: Make init.sh executable
+        run: chmod +x init.sh
+
+      - name: Start Frappe HRM Docker stack
+        run: |
+          ./docker/init.sh
+          docker-compose -f docker-compose.yml up -d
+          echo "Waiting for Frappe to be ready..."
+          until docker exec frappe-bench frappe --version; do sleep 5; done
+
       - name: Run Playwright tests
         run: npx playwright test
         continue-on-error: true
+
+      # --- Tear down Frappe HRM ---
+
+      - name: Shutdown Frappe HRM Docker stack
+        run: docker-compose -f docker-compose.test.yml down
 
       - name: Upload Ortoni report artifact
         uses: actions/upload-pages-artifact@v3

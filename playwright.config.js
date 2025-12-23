@@ -46,13 +46,13 @@ export default defineConfig({
     viewport: { width: 1920, height: 1080 },
   },
 
-  webServer: {
-    command: "docker compose up -d",
-    cwd: path.resolve(__dirname, "./docker"),
-    url: "http://localhost:8000",
-    timeout: 180 * 1000,
-    reuseExistingServer: false,
-  },
+  // webServer: {
+  //   command: "docker compose up -d",
+  //   cwd: path.resolve(__dirname, "./docker"),
+  //   url: "http://localhost:8000",
+  //   timeout: 180 * 1000,
+  //   reuseExistingServer: false,
+  // },
   /* Configure projects for major browsers */
   projects: [
     {
