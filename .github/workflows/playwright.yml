@@ -26,7 +26,6 @@ jobs:
 
       - name: Start Frappe HRM Docker stack
         run: |
-          ./docker/init.sh
           docker-compose -f docker-compose.yml up -d
           echo "Waiting for Frappe to be ready..."
           until docker exec frappe-bench frappe --version; do sleep 5; done
