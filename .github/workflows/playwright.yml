@@ -22,7 +22,7 @@ jobs:
 
       # --- New steps to start Frappe HRM ---
       - name: Make init.sh executable
-        run: chmod +x init.sh
+        run: chmod +x docker/init.sh
 
       - name: Start Frappe HRM Docker stack
         run: |
