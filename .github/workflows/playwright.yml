@@ -30,9 +30,9 @@ jobs:
       #     echo "Waiting for Frappe to be ready..."
       #     until curl -s http://localhost:8000 > /dev/null; do sleep 5; done
 
-      # - name: Run Playwright tests
-      #   run: npx playwright test
-      #   continue-on-error: true
+      - name: Run Playwright tests
+        run: npx playwright test
+        continue-on-error: true
 
       # # --- Tear down Frappe HRM ---
 
